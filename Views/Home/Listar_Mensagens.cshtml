@@ -1,0 +1,85 @@
+@using Microsoft.AspNetCore.Http;
+@model IEnumerable<Mensagens>
+@{
+  ViewData["Title"] = "Listagem de Mensagens";
+}
+
+<style>
+  .nav-bar,
+  footer,
+  .menu-hamburger ul {
+    background-color: #34495e !important;
+    border: none !important;
+  }
+  .fundo-img {
+    background-image: none !important;
+    min-height: none !important;
+    overflow-y: scroll !important;
+  }
+  .table-content {
+    height: auto;
+    width: 100%;
+  }
+  @@media (max-width: 900px) {
+    .table-content {
+      overflow-x: scroll;
+      justify-content: flex-start;
+    }
+  }
+</style>
+
+<main class="fundo-color">
+  <div class="usuarios-content">
+    <div>
+      <div class="icone-titulo"><img class="icones-content" src="https://www.imagensempng.com.br/wp-content/uploads/2021/09/Icone-lista-Png.png">
+        <h3 class="titulos">LISTAGEM DE MENSAGENS</h3>
+      </div>
+      <p class="paragrafos">A lista com todas as mensagens registradas no sistema será exibida abaixo. Utilize os botões
+        da direita para realizar a exclusão ou alteração das mensagens</p>
+      <p class="paragrafos"><strong>AVISO</strong>: Tenha cuidado ao excluir uma mensagem. Uma vez excluídos, os dados do
+        registo
+        relacionados a mensagem não poderão ser recuperados.</p>
+
+      <div class="table-content">
+
+        <table class="table">
+          <thead class="thead-dark">
+            <tr>
+              <th scioe="col">ID</th>
+              <th scope="col">NOME</th>
+              <th scope="col">EMAIL</th>
+              <th scope="col">ASSUNTO</th>
+              <th scope="col">MENSAGEM</th>
+              <th scope="col">DATA</th>              
+              <th scope="col"></th>
+              <th scope="col"></th>
+              <th scope="col"></th>
+
+            </tr>
+          </thead>
+          <tbody>
+            @foreach (Mensagens m in Model)
+            {
+              <tr>
+                <th scope="row">@m.id</th>
+                <td>@m.nome</td>
+                <td>@m.email</td>
+                <td>@m.assunto</td>
+                <td>@m.mensagem</td>
+                <td>@m.data</td>
+                
+                <td><a href="/Home/Alterar_Mensagem?id=@m.id"><img class="icones-content" src="https://w7.pngwing.com/pngs/613/900/png-transparent-computer-icons-editing-delete-button-miscellaneous-angle-logo.png"
+                    title="Alterar"></td>
+                <td><a href="/Home/Excluir_Mensagem?id=@m.id"><img class="icones-content" src="https://w7.pngwing.com/pngs/271/838/png-transparent-computer-icons-delete-icon-white-text-logo.png"
+                    tittle="Excluir"></a>
+                </td>
+              </tr>
+            }
+          </tbody>
+        </table>
+
+
+      </div>
+
+    </div>
+</main>

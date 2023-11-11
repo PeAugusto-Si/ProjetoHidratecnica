@@ -1,0 +1,99 @@
+@using Microsoft.AspNetCore.Http;
+@model Mensagens
+
+@{
+    ViewData["Title"] = "Registro de Mensagens";
+}
+
+<style>
+    .nav-bar,
+    footer,
+    .menu-hamburger ul {
+        background-color: #34495e !important;
+        border: none !important;
+    }
+    .fundo-img {
+        background-image: none !important;
+        min-height: none !important;
+        overflow-y: scroll !important;
+    }
+    .validation {
+        margin: 15px 0;
+        font-family: "Amiko", sans-serif;
+        color: #e12118;
+        position: absolute;
+        animation-name: change-opacity;
+        animation-duration: 3s;
+        animation-timing-function: ease-in;
+        opacity: 0;
+    }
+    @@keyframes change-opacity {
+        from {
+            opacity: 1;
+        }
+        to {
+            opacity: 0;
+        }
+    }
+</style>
+
+@{
+    string validation = ViewBag.Cadastro;
+
+    if (validation != null && validation != "Falha ao registrar mensagem!")
+    {
+        <style>
+            .validation {
+                color: #1fb40b;
+            }
+        </style>
+    }
+}
+
+<main class="fundo-color">
+    <div class="cadastro-content">
+        <div>
+            <div class="icone-titulo"><img class="icones-content" src="https://w7.pngwing.com/pngs/34/27/png-transparent-phone-call-communication-contact-mobile-support-web-icon.png">
+                <h3 class="titulos">REGISTRO DE MENSAGENS</h3>
+            </div>
+            <form class="form-style" action="Registro_Mensagens" method="POST">
+
+                <label class="label-style" asp-for="nome">Nome:</label>
+                <input class="input-style" asp-for="nome" name="nome" required placeholder="Nome"
+                    maxlength="20">
+
+                <label class="label-style" asp-for="email">Email:</label>
+                <input class="input-style" asp-for="email" name="email" required placeholder="email">
+
+                <label class="label-style" asp-for="assunto">Assunto:</label>
+                <input class="input-style" asp-for="assunto" name="assunto" required placeholder="assunto">
+
+                <label class="label-style" asp-for="mensagem">Mensagem:</label>
+                <input class="input-style" asp-for="mensagem" name="mensagem" required placeholder="" maxlength="">
+
+                <label class="label-style" asp-for="data">Data:</label>
+                <input class="input-style" asp-for="data" name="data" required placeholder="dd/mm/aa"maxlength="10">
+
+                @if (Context.Session.GetInt32("id_usuarios") != null)
+                {
+                    ViewBag.id = @Context.Session.GetInt32("id_usuarios");
+                }
+                <input class="input-style" type="hidden" asp-for="usuario" name="usuario" value="@ViewBag.id" required
+                    placeholder="ID de usuário">
+
+                <input type="submit" value="Registrar" class="input-button">
+            </form>
+
+            <p class="validation">@ViewBag.Cadastro</p>
+        </div>
+
+        <div class="bloco-texto paragrafos">
+            <h3 class="titulos">REGISTRO DE MENSAGENS</h3>
+            <p>Preecha os dados da mensagem utilizando o formulário ao lado e use o botão "Registrar" para salva-lo no
+                sistema.</p>
+        </div>
+
+    </div>
+
+
+</main>

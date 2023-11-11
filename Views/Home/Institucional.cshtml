@@ -1,0 +1,120 @@
+@using Microsoft.AspNetCore.Http;
+@model Mensagens
+
+@{
+    ViewData["Title"] = "Registro de Mensagens";
+}
+
+<style>
+    .nav-bar,
+    footer,
+    .menu-hamburger ul {
+        background-color: #34495e !important;
+        border: none !important;
+    }
+    .fundo-img {
+        background-image: src="https://w7.pngwing.com/pngs/388/107/png-transparent-write-modify-tool-edit-pen-document-multimedia-solid-px-icon-thumbnail.png" !important;
+        min-height: none !important;
+        overflow-y: scroll !important;
+    }
+    .validation {
+        margin: 15px 0;
+        font-family: "Amiko", sans-serif;
+        color: #e12118;
+        position: absolute;
+        animation-name: change-opacity;
+        animation-duration: 3s;
+        animation-timing-function: ease-in;
+        opacity: 0;
+    }
+    @@keyframes change-opacity {
+        from {
+            opacity: 1;
+        }
+        to {
+            opacity: 0;
+        }
+    }
+</style>
+
+@{
+    string validation = ViewBag.Cadastro;
+
+    if (validation != null && validation != "Falha ao registrar mensagem!")
+    {
+        <style>
+            .validation {
+                color: #1fb40b;
+            }
+        </style>
+    }
+}
+
+<main class="fundo-color">
+    
+   <!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Nossa Empresa</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+    <meta name="Author" content="Pedro Augusto">
+</head>
+
+<body background="img/background.jpg">
+
+    <header>
+    <br><br><br>
+
+        <center>
+
+            <b><i><h1>Conheça um pouvo sobre a Hidratecnica Hidraulica</h1></i></b>
+            <h3>A Hidratecnica é uma empresa prestadora de serviços que atua no ramo de hidráulica em geral.</h3>
+            <br><br><br>
+
+        </center>
+
+    </header>
+
+    <main>
+
+        <center>
+
+            <b><h2>Somos Assistência Técnica das maiores empresas do País, tanto nacionais quanto importadas.</h2></b>
+            <h3>Atuamos nos serviços de instalação e manutenção predial, residencial,comercial e industrial, desentupimentos e caça-vazamentos. A Hidratecnica preza pelo alto padrão no atendimento e mantêm um investimento na capacitação dos seus colaboradores, e são treinados diretamente com o fabricante.</h3>
+            
+        </center>
+        <br><br><br><br><br>
+
+        <b><h2>Missão:</h2></b> 
+        <h3>a missão da Hidratecnica é prestar serviços de hidráulica em geral, Visando a satisfação total de nossos clientes e colaboradores, e tem por finalidade, assegurar a continuidade e desenvolvimento da empresa, com a participação ativa de seus sócios, colaboradores, clientes e fornecedores. Buscamos promover a economia da água com soluções inovadoras e inteligentes.</h3>
+        <br><br>
+
+        <b><h2>Visão:</h2></b>
+        <h3>Investir no desenvolvimento da empresa, tornando-a referência nacional, com uma mão-de-obra altamente qualificada e trazendo para os nossos clientes a importância do uso eficiente da água.</h3>
+        <br><br>
+
+        <b><h2>Valores:</h2></b>
+        <h3>• Ética e respeito;</h3>
+        <h3>• Clientes totalmente satisfeitos;</h3>
+        <h3>• Colaboradores realizados;</h3>
+        <h3>• Qualidade e Segurança no ambiente de trabalho;</h3>
+        <h3>• Transparência e organização;</h3>
+        <h3>• Parcerias eficazes com fornecedores;</h3>
+       
+
+    </main>
+    <br><br> <br><br> <br><br>
+
+    
+    
+</body>
+
+</html>
+    
+
+
+</main>

@@ -1,0 +1,117 @@
+@using Microsoft.AspNetCore.Http;
+@model Mensagens
+
+@{
+    ViewData["Title"] = "Registro de Mensagens";
+}
+
+<style>
+    .nav-bar,
+    footer,
+    .menu-hamburger ul {
+        background-color: #34495e !important;
+        border: none !important;
+    }
+    .fundo-img {
+        background-image: none !important;
+        min-height: none !important;
+        overflow-y: scroll !important;
+    }
+    .validation {
+        margin: 15px 0;
+        font-family: "Amiko", sans-serif;
+        color: #e12118;
+        position: absolute;
+        animation-name: change-opacity;
+        animation-duration: 3s;
+        animation-timing-function: ease-in;
+        opacity: 0;
+    }
+    @@keyframes change-opacity {
+        from {
+            opacity: 1;
+        }
+        to {
+            opacity: 0;
+        }
+    }
+</style>
+
+@{
+    string validation = ViewBag.Cadastro;
+
+    if (validation != null && validation != "Falha ao registrar mensagem!")
+    {
+        <style>
+            .validation {
+                color: #1fb40b;
+            }
+        </style>
+    }
+}
+
+<main class="fundo-color">
+    
+    <!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Serviços</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+    <meta name="Author" content="Pedro Augusto">
+</head>
+ 
+<body background="img/background.jpg">
+
+    <header>
+    <br><br>
+
+        <center>
+            <b><i><h1>Conheça os Nossos Serviços</h1></i></b>
+        </center>
+        <br>
+
+    </header>
+
+    <main>
+
+        <h3>• Manutenção:</h3>
+        <h4>Predial  &nbsp;&nbsp;
+            Residencial &nbsp;&nbsp;
+            Comercial &nbsp;&nbsp;
+            Industrial &nbsp;&nbsp;
+        </h4>
+
+        <img src="img/manutencao-predial.png" height="200" width="250">&nbsp; &nbsp; &nbsp; &nbsp;
+        <img src="img/manutencao-residencial.png" height="200" width="250">&nbsp; &nbsp; &nbsp; &nbsp;
+        <img src="img/manutencao-comercial.png" height="200" width="250">&nbsp; &nbsp; &nbsp; &nbsp;
+        <img src="img/manutencao-insdustrial.png" height="200" width="250">&nbsp; &nbsp; &nbsp; &nbsp;
+        <br><br><br><br><br><br>
+
+        <h3>Instalação:</h3>
+        <h4>Louças &nbsp;&nbsp;
+            Metais &nbsp;&nbsp;
+            Acessórios &nbsp;&nbsp;
+        </h4>
+
+        <img src="img/isntalacoes-deca.png" height="150" width="250">&nbsp; &nbsp; &nbsp; &nbsp;
+        <img src="img/deca.png" height="150" width="250">&nbsp; &nbsp; &nbsp; &nbsp;
+        <img src="img/Acessorios-banheiros.jpg" height="150" width="250">&nbsp; &nbsp; &nbsp; &nbsp;
+        
+
+
+    </main>
+    <br><br><br><br><br><br><br><br><br><br><br><br>
+
+    
+</body>
+
+</html>
+
+    
+
+
+</main>

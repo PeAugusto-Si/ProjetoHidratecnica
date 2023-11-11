@@ -1,0 +1,63 @@
+@using Microsoft.AspNetCore.Http;
+@model Mensagens
+
+@{
+    ViewData["Title"] = "Alteração de Mensagem";
+}
+
+<style>
+    .nav-bar,
+    footer,
+    .menu-hamburger ul {
+        background-color: #34495e !important;
+        border: none !important;
+    }
+    .fundo-img {
+        background-image: none !important;
+        min-height: none !important;
+        overflow-y: scroll !important;
+    }
+</style>
+
+<main class="fundo-color">
+    <div class="cadastro-content">
+        <div>
+            <div class="icone-titulo"><img class="icones-content" src="https://w7.pngwing.com/pngs/388/107/png-transparent-write-modify-tool-edit-pen-document-multimedia-solid-px-icon-thumbnail.png">
+                <h3 class="titulos">ALTERAÇÃO DE DADOS DA MENSAGEM</h3>
+            </div>
+            <form class="form-style" action="Alterar_Mensagem" method="POST">
+
+                <label class="label-style" asp-for="nome">Nome:</label>
+                <input class="input-style" asp-for="nome" name="nome" value="@Model.nome" required>
+
+                <label class="label-style" asp-for="email">Email:</label>
+                <input class="input-style" asp-for="email" name="email" value="@Model.email" required>
+
+                <label class="label-style" asp-for="assunto">Assunto:</label>
+                <input class="input-style" asp-for="assunto" name="assunto" value="@Model.assunto" required>
+
+                <label class="label-style" asp-for="mensagem">Mensagem:</label>
+                <input class="input-style" asp-for="mensagem" name="mensagem" value="@Model.mensagem" required>
+
+                <label class="label-style" asp-for="data">Data:</label>
+                <input class="input-style" asp-for="data" name="data" value="@Model.data" required>
+
+               
+
+                <input class="input-style" asp-for="id" type="hidden" value="@Model.id" name="id" required>
+
+                <input type="submit" value="Alterar" class="input-button">
+            </form>
+
+        </div>
+
+        <div class="bloco-texto paragrafos">
+            <h3 class="titulos">DADOS DA MENSAGEM</h3>
+            <p>Modifique os dados da mensagem ao lado apagando os antigos e inserindo os novos.</p>
+            <p>Após conferir se está tudo correto, use o botão "Alterar" para concluir a alteração.</p>
+        </div>
+
+    </div>
+
+
+</main>

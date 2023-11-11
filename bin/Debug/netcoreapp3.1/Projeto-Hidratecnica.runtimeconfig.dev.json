@@ -1,0 +1,8 @@
+{
+  "runtimeOptions": {
+    "additionalProbingPaths": [
+      "C:\\Users\\Valpe\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\Valpe\\.nuget\\packages"
+    ]
+  }
+}
